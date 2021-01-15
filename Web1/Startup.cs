@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Identity.Web;
 using Microsoft.Identity.Web.UI;
 
@@ -63,6 +64,12 @@ namespace Web1
 				// The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
 				app.UseHsts();
 			}
+
+			app.Use((context, next) =>
+			{
+				context.Request.Host = new HostString("localhost", 9013);
+				return next();
+			});
 
 			app.UseHttpsRedirection();
 			app.UseStaticFiles();

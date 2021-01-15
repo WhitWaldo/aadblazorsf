@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Settings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/2011/01/fabric">
 	<Section Name="AzureAD">
-		<Parameter Name="Instance" Value=""/>
-		<Parameter Name="Domain" Value=""/>
-		<Parameter Name="TenantId" Value=""/>
-		<Parameter Name="ClientId" Value=""/>
-		<Parameter Name="CallbackPath" Value=""/>
+		<Parameter Name="Instance" Value="https://login.microsoftonline.com/"/>
+		<Parameter Name="Domain" Value="innovian.net"/>
+		<Parameter Name="TenantId" Value="4129f61a-2f50-4f30-9676-043fa04064be"/>
+		<Parameter Name="ClientId" Value="bb1a8c80-15cd-4d33-bf73-5316d506c512"/>
+		<Parameter Name="CallbackPath" Value="/signin-oidc"/>
 	</Section>
 </Settings>
