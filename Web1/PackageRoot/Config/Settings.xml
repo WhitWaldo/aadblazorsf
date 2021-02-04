@@ -4,7 +4,7 @@
 		<Parameter Name="Instance" Value="https://login.microsoftonline.com/"/>
 		<Parameter Name="Domain" Value="innovian.net"/>
 		<Parameter Name="TenantId" Value="4129f61a-2f50-4f30-9676-043fa04064be"/>
-		<Parameter Name="ClientId" Value="bb1a8c80-15cd-4d33-bf73-5316d506c512"/>
+		<Parameter Name="ClientId" Value="a29b45fd-d9ad-425b-b06e-9487e6f9b725"/>
 		<Parameter Name="CallbackPath" Value="/signin-oidc"/>
 	</Section>
 </Settings>

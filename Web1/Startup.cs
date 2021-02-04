@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
+using Microsoft.AspNetCore.CookiePolicy;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Identity.Web;
 using Microsoft.Identity.Web.UI;
@@ -65,11 +66,11 @@ namespace Web1
 				app.UseHsts();
 			}
 
-			app.Use((context, next) =>
-			{
-				context.Request.Host = new HostString("localhost", 9013);
-				return next();
-			});
+			// app.Use((context, next) =>
+			// {
+			// 	context.Request.Host = new HostString("localhost", 9013);
+			// 	return next();
+			// });
 
 			app.UseHttpsRedirection();
 			app.UseStaticFiles();
@@ -81,7 +82,9 @@ namespace Web1
 
 			app.UseCookiePolicy(new CookiePolicyOptions
 			{
-				MinimumSameSitePolicy = SameSiteMode.Lax
+				MinimumSameSitePolicy = SameSiteMode.Lax,
+				HttpOnly = HttpOnlyPolicy.None,
+				Secure = CookieSecurePolicy.SameAsRequest
 			});
 
 			app.UseEndpoints(endpoints =>
